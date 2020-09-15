@@ -11,8 +11,7 @@ $(function() {
                         data: {
                             q: request.term
                         },
-
-
+                    
                         success: function(data) {
 
                             var allEpisodes = data._embedded.episodes;
@@ -36,30 +35,22 @@ $(function() {
                                     desc: item.summary,
                                     season: item.season,
                                     image: item.image
-
-
-
                                 }
                             });
 
                         response(results);
-
                     }
                 });
         },
-
-
         minLength: 3,
         select: function(event, ui) {
             var description = JSON.stringify(ui.item.desc);
 
             var stripedHtmldesc = description.replace(/<[^>]+>/g, '');
-
+          
             $("#project-description").text(stripedHtmldesc);
 
-
             return false;
-
         }
     })
 .autocomplete("instance")._renderItem = function(ul, item) {
