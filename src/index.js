@@ -15,19 +15,19 @@ $(function() {
 
                         success: function(data) {
 
-                            var allEposodes = data._embedded.episodes;
+                            var allEpisodes = data._embedded.episodes;
 
                             function test() {
-                                for (var key in allEposodes) {
-                                    if (allEposodes.hasOwnProperty(key)) {
+                                for (var key in allEpisodes) {
+                                    if (allEpisodes.hasOwnProperty(key)) {
                                         return {
-                                            image: allEposodes[key].image.medium,
+                                            image: allEpisodes[key].image.medium,
                                         }
                                     }
                                 }
                             }
 
-                            var results = $.map(allEposodes, function(item)
+                            var results = $.map(allEpisodes, function(item)
 
                                 return {
                                     label: item.name,
